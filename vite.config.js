@@ -8,5 +8,11 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: ['./vitest.setup.js'],
   },
-  base: '/ci-cd-github-page/'
+  base: '/ci-cd-github-page/',
+  test: {
+    coverage: {
+      provider: 'v8',
+      reporter: ['lcov', 'text'],   // lcov is what SonarCloud reads
+    },
+  },
 })
